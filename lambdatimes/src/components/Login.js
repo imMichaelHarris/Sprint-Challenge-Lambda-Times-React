@@ -12,7 +12,7 @@ class Login extends React.Component {
   state = {
     usernameInput: "",
     passwordInput: "",
-    modal: false
+    modal: this.props.loggedIn
   };
 
   handleChanges = e => {
@@ -21,18 +21,30 @@ class Login extends React.Component {
     });
   };
 
-  toggle = () => {
-    this.setState(prevSate => {
-      return {
-        modal: !prevSate.modal
-      };
-    });
+//   compnentDidUpdate(prevProps){
+//       if(prevProps !== this.props){
+//           this.setState({
+//               modal: this.props.loggedIn
+//           })
+//       }
+//   }
+
+  login = () => {
+    if(this.state.usernameInput && this.state.passwordInput){
+      localStorage.setItem("username", JSON.stringify(this.state.usernameInput));
+      this.setState({
+        usernameInput: "",
+        passwordInput: ""
+      })
+      window.location.reload()
+    }
+
   };
   render() {
+      console.log('login', this.state.modal)
     return (
       <>
-        <Button onClick={this.toggle}>Login</Button>
-        <Modal isOpen={this.state.modal} toggle={this.toggle}>
+        <Modal isOpen={this.props.loggedIn} toggle={this.props.toggle}>
           <ModalHeader>Login</ModalHeader>
           <ModalBody>
             <Input
@@ -50,7 +62,7 @@ class Login extends React.Component {
               onChange={this.handleChanges}
             />
           </ModalBody>
-          <ModalFooter><Button>Login</Button></ModalFooter>
+          <ModalFooter><Button onClick={this.login}>Login</Button></ModalFooter>
         </Modal>
       </>
     );

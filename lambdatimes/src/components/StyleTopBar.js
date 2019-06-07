@@ -9,6 +9,8 @@ align-items: none;
 flex-direction: row;
 position: fixed;
 height: 44px;
+z-index: 100;
+
 background-color: #333;
 `
 export const Container = styled.div`
