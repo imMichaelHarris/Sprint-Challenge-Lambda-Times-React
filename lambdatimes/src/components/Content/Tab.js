@@ -12,6 +12,7 @@ const Tab = props => {
       onClick={() => {
         /* Replace this dummy click handler function with your selectTabHandler function from props 
          you'll need to pass the `tab` in as an argument to this handler. */
+         props.changeSelected(props.tab.toUpperCase())
       }}
     >
       {props.tab.toUpperCase()}
@@ -23,6 +24,7 @@ const Tab = props => {
 Tab.propTypes = {
   tab: PropTypes.shape({
     tab: PropTypes.string.isRequired
-  })
+  }),
+  changeSelected: PropTypes.func.isRequired
 }
 export default Tab;
