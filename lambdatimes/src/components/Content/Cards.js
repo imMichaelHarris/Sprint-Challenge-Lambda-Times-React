@@ -19,7 +19,7 @@ Cards.propTypes = {
     PropTypes.shape({
       author: PropTypes.string.isRequired,
       headline: PropTypes.string.isRequired,
-      img: PropTypes.string,
+      img: PropTypes.string.isRequired,
       tab: PropTypes.string.isRequired
     })
   )
