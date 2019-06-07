@@ -21,6 +21,7 @@ const Tabs = props => {
 // Make sure to use PropTypes to validate your types!
 Tab.propTypes = {
   tabs: PropTypes.array,
-  changeSelected: PropTypes.func.isRequired
+  changeSelected: PropTypes.func.isRequired,
+  selectedTab: PropTypes.string
 }
 export default Tabs;
