@@ -1,5 +1,7 @@
 import React from "react";
 import Tab from "./Tab";
+import PropTypes from 'prop-types';
+
 const Tabs = props => {
   // console.log("tabs", props);
   return (
@@ -17,4 +19,7 @@ const Tabs = props => {
 };
 
 // Make sure to use PropTypes to validate your types!
+Tab.propTypes = {
+  tabs: PropTypes.array
+}
 export default Tabs;
