@@ -37,7 +37,7 @@ Look through the application code. If you have the old Lambda Times (Applied Jav
 
 Follow these steps to set up your project:
 
-- [ ] Create a forked copy of this project.
+- [X] Create a forked copy of this project.
 - [ ] Add your project manager as collaborator on Github.
 - [ ] Clone your OWN version of the repository (Not Lambda's by mistake!).
 - [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
